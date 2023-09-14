@@ -6,4 +6,6 @@ two versions of a file side by side.
 As a final test, I will be adding this last line to practice reverting to past versions
 of this text file.
 
-Yet another line added, for testing purposes.
+Yet another line added, for testing purposes.'
+
+New line.
