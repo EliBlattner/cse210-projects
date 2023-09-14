@@ -1,1 +1,4 @@
 Hey, this is a test to veryify that commit is working properly.
+
+This next line has been added to see what the differences look like when comparing
+two versions of a file side by side.
