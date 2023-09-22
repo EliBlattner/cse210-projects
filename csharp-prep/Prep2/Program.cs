@@ -6,8 +6,8 @@ class Program
     {
         Console.WriteLine("Grade Calculator Version 1");
         Console.WriteLine("Please enter the grade percentage you recieved:");
-        int gradePercentage = Console.Read();
-        Console.WriteLine($"{gradePercentage} is your grade percentage.");
+        string gradePercentage = Console.ReadLine();
+        Console.WriteLine($"{int.Parse(gradePercentage)} is your grade percentage.");
         
     }
 }
