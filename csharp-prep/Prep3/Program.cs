@@ -13,10 +13,11 @@ class Program
         //int magicNumberNum = int.Parse(magicNumber);
 
         bool guess = false;
-
+        int guessCount = 0;
         while (guess == false)
         {
             Console.WriteLine("What is your guess?");
+            guessCount += 1;
             string userGuess = Console.ReadLine();
             int userGuessNum = int.Parse(userGuess);
             if (number > userGuessNum)
@@ -30,6 +31,7 @@ class Program
             else
             {
                 Console.WriteLine("Nice job! You guessed it!");
+                Console.WriteLine($"It only took you {guessCount} guesses!");
                 guess = true;
             }
         }
