@@ -7,10 +7,10 @@ public class Write
     public DateTime _currentDateTime;
     public string _promptSelection;
     
-    public void Display()
+    public string Display()
     {
-        _currentDateTime.ToString("yyyy-MM-dd");
-        Console.WriteLine($"{_currentDateTime} , {_promptSelection} , {_userEntry}");
+        string _currentDateTimeStr = _currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+        return ($"{_currentDateTimeStr} , {_promptSelection} , {_userEntry}");
     } 
    
 }
