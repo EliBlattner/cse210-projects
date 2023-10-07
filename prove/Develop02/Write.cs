@@ -10,7 +10,9 @@ public class Write
     public string Display()
     {
         string _currentDateTimeStr = _currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-        return ($"{_currentDateTimeStr} , {_promptSelection} , {_userEntry}");
+        Console.WriteLine($"{_currentDateTimeStr} , {_promptSelection} , {_userEntry}");
+        return $"{_currentDateTimeStr} , {_promptSelection} , {_userEntry}";
+
     } 
    
 }

@@ -12,7 +12,6 @@ class Program
 
         Show show1 = new Show();
         show1._entriesList.Add(write1.Display());
-
-        write1.Display();
+        
     }
 }
