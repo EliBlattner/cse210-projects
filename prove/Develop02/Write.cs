@@ -6,6 +6,8 @@ public class Write
     public string _userEntry;
     public DateTime _currentDateTime;
     public string _promptSelection;
+
+    
     
     public string Display()
     {
