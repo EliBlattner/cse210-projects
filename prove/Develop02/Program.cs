@@ -29,7 +29,7 @@ public class Program
 
             else if (userLoopInput == "2")
             {
-                Console.WriteLine("\n---------------\nJournal Entries\n--------------\n");
+                Console.WriteLine("\n---------------\nJournal Entries\n---------------\n");
                 
                  for (int i = 0; i < write1._entriesList.Count; i++)
                     {
