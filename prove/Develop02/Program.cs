@@ -42,9 +42,19 @@ public class Program
                 Console.WriteLine("Save Call");
             }
 
-            else
+            else if (userLoopInput == "4")
             {
                 Console.WriteLine("Load Call");
+            }
+            
+            else if (userLoopInput == "5")
+            {
+                break;
+            }
+            
+            else
+            {
+                Console.WriteLine("Error - Invalid Entry. Please Provide a Valid Input.");
             }
         }
 
