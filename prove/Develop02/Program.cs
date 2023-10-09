@@ -6,9 +6,10 @@ public class Program
     static void Main(string[] args)
     {
         string userLoopInput = "0";
-
         //Write class operations below
         Write write1 = new Write();
+
+        SaveAndLoad fileManage = new SaveAndLoad();
 
         while (userLoopInput != "5")
         {
@@ -39,12 +40,19 @@ public class Program
 
             else if (userLoopInput == "3")
             {
-                Console.WriteLine("Save Call");
+                Console.WriteLine("Enter the path for the CSV file: ");
+                string filePath = Console.ReadLine();
+
+                fileManage.SaveEntriesToCSV(write1._entriesList, filePath);
+                Console.WriteLine("Entries saved");
             }
 
             else if (userLoopInput == "4")
             {
-                Console.WriteLine("Load Call");
+                Console.WriteLine("Enter the path for the CSV file: ");
+                string filePath = Console.ReadLine();
+
+                fileManage.LoadEntriesFromCSV(write1._entriesList, filePath);
             }
             
             else if (userLoopInput == "5")
@@ -57,7 +65,5 @@ public class Program
                 Console.WriteLine("Error - Invalid Entry. Please Provide a Valid Input.");
             }
         }
-
-
     }
 }

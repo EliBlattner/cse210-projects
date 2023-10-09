@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Security.Cryptography.X509Certificates;
 public class Write
 {
     public string _userEntry;
@@ -15,21 +15,20 @@ public class Write
     };
 
     static Random random = new Random();
-    int randomIndex; // Store the random index for the session
-
+    int randomIndex;
     public List<string> _entriesList = new List<string>();
 
     public string Display()
     {
         string _currentDateTimeStr = _currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
         string prompt = _promptBankList[randomIndex];
-        Console.WriteLine($"{_currentDateTimeStr} | {prompt}\n{_userEntry}");
-        return $"{_currentDateTimeStr} | {prompt}\n{_userEntry}";
+        Console.WriteLine($"{_currentDateTimeStr} | {prompt} | {_userEntry}");
+        return $"{_currentDateTimeStr} | {prompt} | {_userEntry}";
     }
 
     public string Display2()
     {
-        randomIndex = random.Next(0, _promptBankList.Count); // Generate a new random index
+        randomIndex = random.Next(0, _promptBankList.Count);
         string prompt = _promptBankList[randomIndex];
         Console.WriteLine(prompt);
         return prompt;
@@ -39,7 +38,7 @@ public class Write
     {
         string _currentDateTimeStr = _currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
         string prompt = _promptBankList[randomIndex];
-        string result = $"{_currentDateTimeStr} | {prompt}\n{_userEntry}";
+        string result = $"{_currentDateTimeStr} | {prompt} | {_userEntry}";
         _entriesList.Add(result);
         return result;
     }
