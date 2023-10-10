@@ -11,7 +11,8 @@ public class Write
         "What is something that went well today?",
         "What was the hardest thing you accomplished today?",
         "Write about a funny thing that happened today.",
-        "What is something you noticed today, that you need to work on tomorrow?"
+        "What is something you noticed today, that you need to work on tomorrow?",
+        "What was the most memorable interaction you had with someone?"
     };
 
     static Random random = new Random();
