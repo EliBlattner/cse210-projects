@@ -16,7 +16,7 @@ public class Word
 
 
 
-    public void Hide()
+    public void Hide(_multiVersesExist, _verseWordsList1, _verseWordsList2)
     {
 
     }
