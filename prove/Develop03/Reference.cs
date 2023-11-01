@@ -57,7 +57,7 @@ public class Reference
         }
     }
 
-    //This method takes all the attributes and passes them in an encapsulated form as a collection of return values.
+    //This method takes all the attributes and organizes them in an encapsulated form as a collection of return values.
     public (bool, string, string, string, string, string, string) PassReferenceValues()
     {
         return (_multiVersesExist,_verseNumber1,_verseNumber2,_verseText1,_verseText2,_bookName,_chapterNumber);
