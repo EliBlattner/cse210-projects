@@ -195,3 +195,4 @@ public class Word
                 Console.WriteLine($"{_bookName} {_chapterNumber}: {_verseNumber1}\n\n{_verseNumber1} {_finalScripture1})");
             }
     }
+}
