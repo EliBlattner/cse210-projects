@@ -33,6 +33,8 @@ public class Scripture
             string[] words1 = _verseText1.Split(' ');
             _verseWordsList1.AddRange(words1);
         }
+
+        return _verseWordsList1, _verseWordsList2
     }
 
     //public void ProcessReferenceValuesInScripture(Word word)
