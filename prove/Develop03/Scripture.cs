@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 public class Scripture
@@ -16,7 +17,7 @@ public class Scripture
     //create a single list, while 2 verses will create 2 lists.
     public void ParseScripCreateList(bool _multiVersesExist, string _verseText1, string _verseText2)
     {
-        if (_multiVersesExist == true)
+        if (_multiVersesExist)
         {
             //parses _verseText1 and _verseText2, and assigns them to respective lists.
 
@@ -34,7 +35,16 @@ public class Scripture
             _verseWordsList1.AddRange(words1);
         }
 
-        return _verseWordsList1, _verseWordsList2
+    }
+
+    public List<string> GetVerseWordsList1()
+    {
+        return _verseWordsList1;
+    }
+
+    public List<string> GetVerseWordsList2()
+    {
+        return _verseWordsList2;
     }
 
     //public void ProcessReferenceValuesInScripture(Word word)
