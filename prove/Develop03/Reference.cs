@@ -70,11 +70,5 @@ public class Reference
         var values = PassReferenceValues();
         scripture.ParseScripCreateList(values.Item1, values.Item4, values.Item5);
     }
-
-    //This does the same thing but for the methods in the Word class.
     
-    //public void WordClassMethodNULL(Word word)
-    //{
-    //    var values = PassReferenceValues(values.Item1, values.Item6, values.Item7);
-    //}
 }   

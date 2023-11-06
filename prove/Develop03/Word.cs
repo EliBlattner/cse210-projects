@@ -28,16 +28,6 @@ public class Word
     
     }
 
-    
-
-
-
-
-
-
-
-
-
     public void CreateBoolList(bool _multiVersesExist, List<string>_verseWordsList1, List<string>_verseWordsList2)
     {
         //produces a list the same size as _verseWordsList that holds boolean values at each corresponding

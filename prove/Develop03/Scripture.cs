@@ -47,9 +47,4 @@ public class Scripture
         return _verseWordsList2;
     }
 
-    //public void ProcessReferenceValuesInScripture(Word word)
-    //{
-        //var values = PassReferenceValues();
-        //scripture.ParseScripCreateList(values.Item1, values.Item4, values.Item5);
-    //}
 }
