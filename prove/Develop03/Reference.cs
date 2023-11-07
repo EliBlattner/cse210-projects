@@ -2,7 +2,6 @@ using System.Runtime.CompilerServices;
 
 public class Reference
 {
-
     private bool _multiVersesExist;
 
     private string _bookName;
@@ -16,7 +15,6 @@ public class Reference
     private string _verseText2;
 
     private string _chapterNumber;
-
 
     //Uses logic to assign _multiVerseExists member variable true or false if reference contains either 1 or 2 verses.
     //This will be used to tell the constructors in the Scripture class how to behave. 
@@ -75,4 +73,5 @@ public class Reference
     {
         return _multiVersesExist;
     }
+
 }   

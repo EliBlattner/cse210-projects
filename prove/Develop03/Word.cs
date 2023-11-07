@@ -15,6 +15,9 @@ public class Word
     private string _finalScripture1;
     private string _finalScripture2;
 
+    private bool _allHiddenBoolValue;
+
+
 
 
     public Word()
@@ -58,7 +61,7 @@ public class Word
     {
         //gets random number and replaces the index in the boolIndexList with false. (false = hide)
         var random = new Random();
-        if (_multiVersesExist)
+        if (_multiVersesExist == true)
         {
             int randomNumber1 = random.Next(0, _verseWordsList1.Count);
             _boolIndexList1[randomNumber1] = false;
@@ -145,37 +148,35 @@ public class Word
                 if (_boolIndexList1[icount] == false)
                 {
                     int underscoreCount = word.Length;
-                    _hiddenScriptureList2.Add(new string('_', underscoreCount));
+                    _hiddenScriptureList1.Add(new string('_', underscoreCount));
                 }
                 else
                 {
-                    _hiddenScriptureList2.Add(word);
+                    _hiddenScriptureList1.Add(word);
                 }
 
                 icount += 1;
             }
         }
         
+        //This part joins the text and calls a text wrap method to tidy up the display.
         if (_multiVersesExist == true)
         {
             //Text is then appended into a single string.
             _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
             //Text is then wrapped (not my code).
-            WrapText(_finalScripture1);
 
             
             _finalScripture2 = string.Join(" ", _hiddenScriptureList2);
-
-            WrapText(_finalScripture2);
         }
         else
         {
             //Text is then appended into a single string.
             _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
             //Text is then wrapped (not my code).
-            WrapText(_finalScripture1);
         }
-        
+
+        Console.WriteLine(_finalScripture1);
     }
 
     //I spent AGES trying to get a text wrapping feature set, but it was just too
@@ -222,6 +223,51 @@ public class Word
             else
             {
                 Console.WriteLine($"{_bookName} {_chapterNumber}: {_verseNumber1}\n\n{_verseNumber1} {_finalScripture1})");
+            }  
+    }
+
+    public bool PassAllHiddenValue()
+    {
+        return _allHiddenBoolValue;
+    }
+
+    public void AllHiddenCheck2(bool _multiVersesExist)
+    {
+         // Assume all hidden initially
+
+        if (_finalScripture1 != null)
+        {
+            foreach (char letter in _finalScripture1)
+            {
+                if (letter == ' ' || letter == '_')
+                {
+                    // This character is a space or underscore, continue checking
+                }
+                else
+                {
+                    // This character is not a space or underscore, so not all are hidden
+                    _allHiddenBoolValue = false;
+                    break; // No need to check further
+                }
             }
+        }
+
+        if (_multiVersesExist && _finalScripture2 != null)
+        {
+            foreach (char letter2 in _finalScripture2)
+            {
+                if (letter2 == ' ' || letter2 == '_')
+                {
+                    // This character is a space or underscore, continue checking
+                }
+                else
+                {
+                    // This character is not a space or underscore, so not all are hidden
+                    _allHiddenBoolValue = false;
+                    break; // No need to check further
+                }
+            }
+        }
+        // No need to handle else, as it will remain true by default if _finalScripture2 is null
     }
 }
