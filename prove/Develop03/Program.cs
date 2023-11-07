@@ -22,7 +22,7 @@ class Program
         {
             if (wordINST.PassAllHiddenValue() != true)
             {
-                Console.WriteLine("\nPress enter to hide words or type 'quit' to exit: \n");
+                Console.WriteLine("\n\n\nPress enter to hide words or type 'quit' to exit: \n");
                 _userLoopInput = Console.ReadLine();
 
                 wordINST.AssignHiddenWords(referenceINST.PassMultiverseBool(),scriptureINST.GetVerseWordsList1(),scriptureINST.GetVerseWordsList2());

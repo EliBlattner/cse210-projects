@@ -177,6 +177,7 @@ public class Word
         }
 
         Console.WriteLine(_finalScripture1);
+        _hiddenScriptureList1.Clear();
     }
 
     //I spent AGES trying to get a text wrapping feature set, but it was just too
