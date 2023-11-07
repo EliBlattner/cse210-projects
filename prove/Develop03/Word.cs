@@ -32,7 +32,7 @@ public class Word
     {
         //produces a list the same size as _verseWordsList that holds boolean values at each corresponding
         //index, to be used when deciding which words to hide.
-        if (_multiVersesExist == true)
+        if (_multiVersesExist == false)
         {
             foreach (var word in _verseWordsList1)
             {
@@ -41,32 +41,56 @@ public class Word
         }
         else
         {
+            foreach (var word in _verseWordsList1)
+            {
+                _boolIndexList1.Add(true);
+            }
+            
             foreach (var word in _verseWordsList2)
             {
                 _boolIndexList2.Add(true);
             }
         }
+        Console.WriteLine(_boolIndexList1[0]);
     }
-
+    
     public void AssignHiddenWords(bool _multiVersesExist, List<string> _verseWordsList1, List<string>_verseWordsList2)
     {
         //gets random number and replaces the index in the boolIndexList with false. (false = hide)
         var random = new Random();
         if (_multiVersesExist)
         {
-            int randomNumber1 = random.Next(1, _verseWordsList1.Count);
+            int randomNumber1 = random.Next(0, _verseWordsList1.Count);
             _boolIndexList1[randomNumber1] = false;
 
-            int randomNumber2 = random.Next(1, _verseWordsList1.Count);
+            int randomNumber2 = random.Next(0, _verseWordsList1.Count);
             _boolIndexList1[randomNumber2] = false;
 
-            int randomNumber3 = random.Next(1, _verseWordsList1.Count);
+            int randomNumber3 = random.Next(0, _verseWordsList1.Count);
             _boolIndexList1[randomNumber3] = false;
+
+            //Doing the same for the second verse provided.
+            int randomNumber4 = random.Next(0, _verseWordsList2.Count);
+            _boolIndexList2[randomNumber4] = false;
+
+            int randomNumber5 = random.Next(0, _verseWordsList2.Count);
+            _boolIndexList2[randomNumber5] = false;
+
+            int randomNumber6 = random.Next(0, _verseWordsList2.Count);
+            _boolIndexList2[randomNumber6] = false;
         }
         else
         {
-            int randomNumber1 = random.Next(1, _verseWordsList2.Count);
-            _boolIndexList2[randomNumber1] = false;
+            int randomNumber1 = random.Next(0, _verseWordsList1.Count);
+            _boolIndexList1[randomNumber1] = false;
+
+            int randomNumber2 = random.Next(0, _verseWordsList1.Count);
+            _boolIndexList1[randomNumber2] = false;
+
+            int randomNumber3 = random.Next(0, _verseWordsList1.Count);
+            _boolIndexList1[randomNumber3] = false;
+
+
         }
     }
 
@@ -132,10 +156,25 @@ public class Word
             }
         }
         
-        //Text is then appended into a single string.
-        _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
-        //Text is then wrapped (not my code).
-        WrapText(_finalScripture1);
+        if (_multiVersesExist == true)
+        {
+            //Text is then appended into a single string.
+            _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
+            //Text is then wrapped (not my code).
+            WrapText(_finalScripture1);
+
+            
+            _finalScripture2 = string.Join(" ", _hiddenScriptureList2);
+
+            WrapText(_finalScripture2);
+        }
+        else
+        {
+            //Text is then appended into a single string.
+            _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
+            //Text is then wrapped (not my code).
+            WrapText(_finalScripture1);
+        }
         
     }
 

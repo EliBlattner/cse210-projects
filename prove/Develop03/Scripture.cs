@@ -7,7 +7,7 @@ public class Scripture
     private List<string> _verseWordsList1;
     private List<string> _verseWordsList2;
     
-        private Scripture()
+        public Scripture()
     {
         _verseWordsList1 = new List<string>();
         _verseWordsList2 = new List<string>();
@@ -26,6 +26,7 @@ public class Scripture
 
             string[] words2 = _verseText2.Split(' ');
             _verseWordsList2.AddRange(words2);
+
         }
         else
         {

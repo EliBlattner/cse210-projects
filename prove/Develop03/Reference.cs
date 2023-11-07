@@ -71,4 +71,8 @@ public class Reference
         scripture.ParseScripCreateList(values.Item1, values.Item4, values.Item5);
     }
     
+    public bool PassMultiverseBool()
+    {
+        return _multiVersesExist;
+    }
 }   
