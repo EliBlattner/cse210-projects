@@ -128,7 +128,7 @@ public class Word
                 if (_boolIndexList2[icount] == false)
                 {
                     int underscoreCount = word.Length;
-                    _hiddenScriptureList1.Add(new string('_', underscoreCount));
+                    _hiddenScriptureList2.Add(new string('_', underscoreCount));
                 }
                 else
                 {
@@ -265,7 +265,15 @@ public class Word
             {
                 if (letter2 == ' ' || letter2 == '_')
                 {
-                    _allHiddenBoolValue = true;
+                    if (_allHiddenBoolValue == true)
+                    {
+                        _allHiddenBoolValue = true;
+                    }
+                    else
+                    {
+                        _allHiddenBoolValue = false;
+                        break;
+                    }
                 }
                 else
                 {
