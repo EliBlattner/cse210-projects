@@ -54,7 +54,6 @@ public class Word
                 _boolIndexList2.Add(true);
             }
         }
-        Console.WriteLine(_boolIndexList1[0]);
     }
     
     public void AssignHiddenWords(bool _multiVersesExist, List<string> _verseWordsList1, List<string>_verseWordsList2)
@@ -164,20 +163,26 @@ public class Word
         {
             //Text is then appended into a single string.
             _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
+
+            //Console.WriteLine(_finalScripture1);
+            _hiddenScriptureList1.Clear();
             //Text is then wrapped (not my code).
 
             
             _finalScripture2 = string.Join(" ", _hiddenScriptureList2);
+
+            //Console.WriteLine(_finalScripture2);
+            _hiddenScriptureList2.Clear();
         }
         else
         {
             //Text is then appended into a single string.
             _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
+
+            //Console.WriteLine(_finalScripture1);
+            _hiddenScriptureList1.Clear();
             //Text is then wrapped (not my code).
         }
-
-        Console.WriteLine(_finalScripture1);
-        _hiddenScriptureList1.Clear();
     }
 
     //I spent AGES trying to get a text wrapping feature set, but it was just too
@@ -213,17 +218,18 @@ public class Word
 
     public void ShowFinalText(bool _multiVersesExist,string _bookName,string _chapterNumber,string _verseNumber1,string _verseNumber2)
     {
-            //clear screen;
+            //clear screen
+            Console.Clear();
 
             //display the modified and scripture's formatted text all together.
 
             if (_multiVersesExist == true)
             {
-                Console.WriteLine($"{_bookName} {_chapterNumber}: {_verseNumber1}-{_verseNumber2}\n\n{_verseNumber1} {_finalScripture1}\n\n{_verseNumber2} {_finalScripture2}");
+                Console.WriteLine($"{_bookName} {_chapterNumber}:{_verseNumber1}-{_verseNumber2}\n\n{_verseNumber1} {_finalScripture1}\n\n{_verseNumber2} {_finalScripture2}");
             }
             else
             {
-                Console.WriteLine($"{_bookName} {_chapterNumber}: {_verseNumber1}\n\n{_verseNumber1} {_finalScripture1})");
+                Console.WriteLine($"{_bookName} {_chapterNumber}:{_verseNumber1}\n\n{_verseNumber1} {_finalScripture1}");
             }  
     }
 
@@ -242,7 +248,7 @@ public class Word
             {
                 if (letter == ' ' || letter == '_')
                 {
-                    // This character is a space or underscore, continue checking
+                    _allHiddenBoolValue = true;
                 }
                 else
                 {
@@ -259,16 +265,14 @@ public class Word
             {
                 if (letter2 == ' ' || letter2 == '_')
                 {
-                    // This character is a space or underscore, continue checking
+                    _allHiddenBoolValue = true;
                 }
                 else
                 {
-                    // This character is not a space or underscore, so not all are hidden
                     _allHiddenBoolValue = false;
                     break; // No need to check further
                 }
             }
         }
-        // No need to handle else, as it will remain true by default if _finalScripture2 is null
     }
 }

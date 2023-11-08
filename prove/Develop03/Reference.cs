@@ -74,4 +74,23 @@ public class Reference
         return _multiVersesExist;
     }
 
+    public string PassBookName()
+    {
+        return _bookName;
+    }
+
+    public string PassChapterNumber()
+    {
+        return _chapterNumber;
+    }
+
+    public string PassVerseNumber1()
+    {
+        return _verseNumber1;
+    }
+
+    public string PassVerseNumber2()
+    {
+        return _verseNumber2;
+    }
 }   
