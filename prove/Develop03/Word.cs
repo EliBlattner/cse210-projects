@@ -164,14 +164,12 @@ public class Word
             //Text is then appended into a single string.
             _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
 
-            //Console.WriteLine(_finalScripture1);
             _hiddenScriptureList1.Clear();
-            //Text is then wrapped (not my code).
-
             
+
+            //Same thing with the second scripture.
             _finalScripture2 = string.Join(" ", _hiddenScriptureList2);
 
-            //Console.WriteLine(_finalScripture2);
             _hiddenScriptureList2.Clear();
         }
         else
@@ -179,43 +177,9 @@ public class Word
             //Text is then appended into a single string.
             _finalScripture1 = string.Join(" ", _hiddenScriptureList1);
 
-            //Console.WriteLine(_finalScripture1);
             _hiddenScriptureList1.Clear();
-            //Text is then wrapped (not my code).
         }
     }
-
-    //I spent AGES trying to get a text wrapping feature set, but it was just too
-    //advanced for my level. OpenAI is responsible for most of this function.
-    private void WrapText(string text)
-    {
-        int maxLineLength = 80; // Adjust the line length as needed
-        int currentPosition = 0;
-        List<string> lines = new List<string>();
-        string[] words = text.Split(' ');
-
-        foreach (string word in words)
-        {
-            if (currentPosition + word.Length + 1 <= maxLineLength)
-            {
-                if (!string.IsNullOrEmpty(lines.LastOrDefault()))
-                {
-                    lines[lines.Count - 1] += " ";
-                    currentPosition++;
-                }
-                lines.Add(word);
-                currentPosition += word.Length;
-            }
-            else
-            {
-                lines.Add(word);
-                currentPosition = word.Length;
-            }
-        }
-
-        _finalScripture1 = string.Join("\n", lines);
-    }
-
     public void ShowFinalText(bool _multiVersesExist,string _bookName,string _chapterNumber,string _verseNumber1,string _verseNumber2)
     {
             //clear screen

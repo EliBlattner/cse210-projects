@@ -25,15 +25,15 @@ class Program
         {
             if (wordINST.PassAllHiddenValue() != true)
             {
+                //Outlines main looping functions
                 wordINST.ShowFinalText(referenceINST.PassMultiverseBool(), referenceINST.PassBookName(), referenceINST.PassChapterNumber(), referenceINST.PassVerseNumber1(), referenceINST.PassVerseNumber2());
-
                 Console.WriteLine("\nPress enter to hide words or type 'quit' to exit: \n");
                 _userLoopInput = Console.ReadLine();
 
+                //Runs methods to display on the terminal
                 wordINST.AssignHiddenWords(referenceINST.PassMultiverseBool(),scriptureINST.GetVerseWordsList1(),scriptureINST.GetVerseWordsList2());
                 wordINST.GetRenderedText(referenceINST.PassMultiverseBool(),scriptureINST.GetVerseWordsList1(),scriptureINST.GetVerseWordsList2());
                 wordINST.AllHiddenCheck2(referenceINST.PassMultiverseBool());
-
             }
             else
             {
