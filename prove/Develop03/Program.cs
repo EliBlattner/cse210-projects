@@ -14,7 +14,6 @@ class Program
 
         Word wordINST = new Word();
         wordINST.CreateBoolList(referenceINST.PassMultiverseBool(),scriptureINST.GetVerseWordsList1(),scriptureINST.GetVerseWordsList2());
-
         wordINST.AssignHiddenWords(referenceINST.PassMultiverseBool(),scriptureINST.GetVerseWordsList1(),scriptureINST.GetVerseWordsList2());
         wordINST.GetRenderedText(referenceINST.PassMultiverseBool(),scriptureINST.GetVerseWordsList1(),scriptureINST.GetVerseWordsList2());
         wordINST.AllHiddenCheck2(referenceINST.PassMultiverseBool());
@@ -41,7 +40,6 @@ class Program
                 break;
             }
         }
-
         Console.WriteLine("Exiting the program...");
     }
 }
