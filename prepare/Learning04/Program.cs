@@ -6,10 +6,9 @@ class Program
     static void Main(string[] args)
     {
         MathAssignment mathAssignment1 = new MathAssignment();
-        WritingAssignment writingAssignment1 = new WritingAssignment();
-
         mathAssignment1.ShowMathAssignment();
-        Console.WriteLine("");
+
+        WritingAssignment writingAssignment1 = new WritingAssignment();
         writingAssignment1.ShowWritingAssignment();
 
     }
