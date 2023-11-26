@@ -1,0 +1,24 @@
+Shared Behaviors:
+-spin function
+-54321 countdown function
+
+---Classes---
+Program
+-contains menu interface stuff as well as instantiation and display
+
+Activity(parent)
+-contains commonalities between breathing, reflecting, and listing subclasses
+-commonalities include:
+54321 method
+spinning wheel method(5 seconds)
+start message(welcome to the {parameter} program)
+end message(well done!) + spinner
+
+BreathingActivity
+-contains program for breathing
+
+ReflectingActivity
+-contains program for reflecting
+
+ListingActivity
+-contains program for listing

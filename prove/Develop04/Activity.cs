@@ -1,0 +1,5 @@
+
+public class Activity
+{
+    //SHARED SUB CLASS COMMONALITIES HERE (PARENT CLASS)
+}
