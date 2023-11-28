@@ -1,11 +1,13 @@
 
 using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
 
 public class Activity
 {
-    protected string _activityType;
+    private string _activityType;
+    private int _desiredDuration = 5;
 
-    List<string> _wheelCharacters = new List<string> { "-", "'\'", "|", "/" };
+    List<string> _wheelCharacters = new List<string> { "-", "\\", "|", "/" };
 
     //SHARED SUB CLASS COMMONALITIES HERE (PARENT CLASS)
 
@@ -18,12 +20,33 @@ public class Activity
     }
     
 
-    //Counts down from 5 to 1
-    public string DescendingCountdownWait(_desiredDuration)
+    //Counts down from 5 to 1 at default, and takes parameter when user needs a 
+    //higher countdown timer.
+    public void DescendingCountdownWait(int _desiredDuration)
     {
-        
-        return
+        for (int i = _desiredDuration ; i > 0; i--)
+        {
+            Console.WriteLine(i);
+            Thread.Sleep(1000);
+            Console.WriteLine("\b \b");
+        }
+        Console.WriteLine("Done");
     }
+
+    public void StartupMessage(string _activityType)
+    {
+        string introMessage = "null";
+
+        if (_activityType == "Breathing")
+        {
+            introMessage = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
+        }
+        
+        
+        Console.WriteLine($"Welcome to the {_activityType} activity.")
+
+    }
+
 
     public string EndMessage(_activityType)
     {
