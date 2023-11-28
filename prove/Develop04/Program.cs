@@ -25,38 +25,38 @@ class Program
             if (_userMenuChoice == "1")
             {
                 _activityType = "Breathing";
-                activity1.StartupMessage();
+                activity1.StartupMessage(_activityType);
                 BreathingActivity breathingActivity1 = new BreathingActivity();
 
 
 
-                activity1.EndMessage();
+                activity1.EndMessage(_activityType);
             }
             else if (_userMenuChoice == "2")
             {
                 _activityType = "Reflecting";
-                activity1.StartupMessage();
-                ReflectingActivity reflectingActivity1 = new ReflectingActivity();=
+                activity1.StartupMessage(_activityType);
+                ReflectingActivity reflectingActivity1 = new ReflectingActivity();
 
 
 
-                activity1.EndMessage();
+                activity1.EndMessage(_activityType);
             }
             else if (_userMenuChoice == "3")
             {
                 _activityType = "Listing";
-                activity1.StartupMessage();
+                activity1.StartupMessage(_activityType);
                 ListingActivity listingActivity1 = new ListingActivity();
 
 
 
-                activity1.EndMessage();
+                activity1.EndMessage(_activityType);
             }            
         }
     }
-    static string PassActivtyType()
-        {
-            return _activityType;
-        }
+    //static string PassActivtyType()
+    //    {
+    //        return _activityType;
+    //    }
 
 }

@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 
 public class Activity
 {
-    private string _activityType;
     private int _desiredDuration = 5;
 
     List<string> _wheelCharacters = new List<string> { "-", "\\", "|", "/" };
@@ -39,7 +38,7 @@ public class Activity
     }
 
     //Displays a startup message based on several instance fields
-    public void StartupMessage()
+    public void StartupMessage(string _activityType)
     {
         string introMessage = "null";
 
@@ -65,7 +64,7 @@ public class Activity
     }
 
 
-    public void EndMessage()
+    public void EndMessage(string _activityType)
     {
 
         Console.WriteLine($"\n\nWell Done!\n\nYou have completed another {_desiredDuration} seconds of the {_activityType} Activity.");
