@@ -1,4 +1,4 @@
-
+d
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
@@ -6,8 +6,7 @@ using System.Runtime.InteropServices;
 
 public class Activity
 {
-    private int _desiredDuration = 5;
-
+    protected int _desiredDuration;
     List<string> _wheelCharacters = new List<string> { "-", "\\", "|", "/" };
 
     //SHARED SUB CLASS COMMONALITIES HERE (PARENT CLASS)
@@ -17,7 +16,7 @@ public class Activity
     {
         foreach (string animation in _wheelCharacters)
         {
-            Console.WriteLine(animation);
+            Console.Write(animation);
             Thread.Sleep(500);
             Console.Write("\b \b");
         }
@@ -26,15 +25,21 @@ public class Activity
 
     //Counts down from 5 to 1 at default, and takes parameter when user needs a 
     //higher countdown timer.
-    public void DescendingCountdownWait()
+    public void DescendingCountdownWait(int _desiredDuration)
     {
         for (int i = _desiredDuration ; i > 0; i--)
         {
-            Console.WriteLine(i);
+            Console.Write(i);
             Thread.Sleep(1000);
-            Console.WriteLine("\b \b");
+            if (i < 9)
+            {
+                Console.Write("\b");
+            }
+            else
+            {
+                Console.Write("\b\b");
+            }
         }
-        Console.WriteLine("Done");
     }
 
     //Displays a startup message based on several instance fields
@@ -55,7 +60,7 @@ public class Activity
             introMessage = "This activty will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
         }
         
-        Console.WriteLine($"Welcome to the {_activityType} activity. \n\n{introMessage}\n\nHow long in seconds, would you like for your session?:");
+        Console.WriteLine($"\nWelcome to the {_activityType} activity. \n\n{introMessage}\n\nHow long in seconds, would you like for your session?:");
         string userChoiceDurationString = Console.ReadLine();
         int userChoiceDuration = int.Parse(userChoiceDurationString);
 
@@ -63,11 +68,17 @@ public class Activity
 
     }
 
-
     public void EndMessage(string _activityType)
     {
 
-        Console.WriteLine($"\n\nWell Done!\n\nYou have completed another {_desiredDuration} seconds of the {_activityType} Activity.");
+        Console.WriteLine($"\n\nWell Done!");
+        SpinningWheel();
+        Console.WriteLine($"\n\nYou have completed another {_desiredDuration} seconds of the {_activityType} Activity.");
+        SpinningWheel();
+    }
 
+    public int PassCountdown()
+    {
+        return _desiredDuration;
     }
 }
