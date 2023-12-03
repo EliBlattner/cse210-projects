@@ -59,7 +59,10 @@ public class Activity
         {
             introMessage = "This activty will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
         }
-        
+        else if (_activityType == "Attributes")
+        {
+            introMessage = "This activity will help you observe how your body and environment around you attribute to your feelings.";
+        }
         Console.Clear();
         Console.WriteLine($"\nWelcome to the {_activityType} activity. \n\n{introMessage}\n\nHow long in seconds, would you like for your session?:");
         string userChoiceDurationString = Console.ReadLine();
