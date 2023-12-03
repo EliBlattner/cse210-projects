@@ -11,6 +11,7 @@ public class BreathingActivity : Activity
     {
         Console.WriteLine($"\nGet Ready...");
         base.SpinningWheel();
+        Console.Clear();
     }
 
     //Displays the Breathing Activity as many times as can fit

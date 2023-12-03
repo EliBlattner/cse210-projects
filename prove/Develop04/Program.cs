@@ -14,10 +14,12 @@ class Program
         string _userMenuChoice = "99";
 
         Console.WriteLine("\nWelcome to the Wellness Program!");
+        Thread.Sleep(2000);
 
         while (_userMenuChoice != "4")
         {
-            Console.WriteLine("\nEnter Menu Choice: \n1. Breathing Activity\n2. Reflecting Activity\n3. Listing Activity\n4. Quit");
+            Console.Clear();
+            Console.WriteLine("\nEnter Menu Choice: \n1. Breathing Activity\n2. Reflecting Activity\n3. Listing Activity\n4. Quit\n");
             _userMenuChoice = Console.ReadLine();
             Activity activity1 = new Activity();
 

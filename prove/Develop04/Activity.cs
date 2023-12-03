@@ -1,4 +1,4 @@
-d
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 public class Activity
 {
-    protected int _desiredDuration;
+    private int _desiredDuration;
     List<string> _wheelCharacters = new List<string> { "-", "\\", "|", "/" };
 
     //SHARED SUB CLASS COMMONALITIES HERE (PARENT CLASS)
@@ -17,7 +17,7 @@ public class Activity
         foreach (string animation in _wheelCharacters)
         {
             Console.Write(animation);
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             Console.Write("\b \b");
         }
     }
@@ -60,6 +60,7 @@ public class Activity
             introMessage = "This activty will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
         }
         
+        Console.Clear();
         Console.WriteLine($"\nWelcome to the {_activityType} activity. \n\n{introMessage}\n\nHow long in seconds, would you like for your session?:");
         string userChoiceDurationString = Console.ReadLine();
         int userChoiceDuration = int.Parse(userChoiceDurationString);
@@ -70,7 +71,7 @@ public class Activity
 
     public void EndMessage(string _activityType)
     {
-
+        Console.Clear();
         Console.WriteLine($"\n\nWell Done!");
         SpinningWheel();
         Console.WriteLine($"\n\nYou have completed another {_desiredDuration} seconds of the {_activityType} Activity.");
