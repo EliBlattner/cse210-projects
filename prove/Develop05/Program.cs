@@ -6,6 +6,7 @@ class Program
     {
         string _userMenuChoice = "99";
         Goal goal1 = new Goal();
+        SaveAndLoad saveAndLoad1 = new SaveAndLoad();
 
         while (_userMenuChoice != "6")
         {
@@ -25,10 +26,6 @@ class Program
                 {
                     //Do SimpleGoal method action.
                     goal1.CreateNewGoal();
-                    goal1.ListGoals();
-                    goal1.RecordEvent();
-                    goal1.ListGoals();
-
                 }
                 else if (_userGoalTypePick == "2")
                 {
@@ -42,21 +39,26 @@ class Program
             else if (_userMenuChoice == "2")
             {
                 //List the string form goals from the complete goals list.
+                goal1.ListGoals();
             }
             else if (_userMenuChoice == "3")
             {
                 //Save current goals list to a txt file.
+                saveAndLoad1.SetFileName();
+                saveAndLoad1.SaveCurrentEntries(goal1.PassUserGoalsList());
             }
             else if (_userMenuChoice == "4")
             {
                 //Read a txt file containing goals. Overwrite the goals list with entries found in the txt file.
+                saveAndLoad1.SetFileName();
+                saveAndLoad1.LoadEntriesFromFile(goal1.PassUserGoalsList());
             }
             else if (_userMenuChoice == "5")
             {
                 //Record a goal event. Read a txt file containing goals. Update Goals string list to make changes. Re-display txt file.
+                goal1.ListGoals();
+                goal1.RecordEvent();
             }       
         }
-
-
     }
 }

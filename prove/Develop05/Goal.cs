@@ -1,4 +1,5 @@
 using System.Net.Sockets;
+using System.Security.Cryptography.X509Certificates;
 
 public class Goal
 {
@@ -103,8 +104,11 @@ public class Goal
                     Console.WriteLine($"{count}. [  ] {goalName} ({goalDescrip})");
                 }
                 count += 1;
-
             }   
         }
+    }
+    public List<string> PassUserGoalsList()
+    {
+        return userGoalList;
     }
 }

@@ -1,0 +1,2 @@
+SimpleGoal~Look better~Take better care of your body~400~False
+SimpleGoal~Be nicer~Compliment people throughout your day~200~False
