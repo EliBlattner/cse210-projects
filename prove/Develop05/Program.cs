@@ -6,6 +6,9 @@ class Program
     {
         string _userMenuChoice = "99";
         Goal goal1 = new Goal();
+        SimpleGoal simpleGoal1 = new SimpleGoal();
+        EternalGoal eternalGoal1 = new EternalGoal();
+        ChecklistGoal checklistGoal1 = new ChecklistGoal();
         SaveAndLoad saveAndLoad1 = new SaveAndLoad();
 
         while (_userMenuChoice != "6")
@@ -25,7 +28,7 @@ class Program
                 if (_userGoalTypePick == "1")
                 {
                     //Do SimpleGoal method action.
-                    goal1.CreateNewGoal();
+                    simpleGoal1.CreateNewGoal();
                 }
                 else if (_userGoalTypePick == "2")
                 {
