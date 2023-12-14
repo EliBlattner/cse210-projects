@@ -30,4 +30,9 @@ public class EternalGoal : Goal
         Console.WriteLine($"Congratulations! You have earned {goalPointVal} points! ");
         _pointsTotal += goalPointVal;
     }
+
+    public int PassEternalPoints()
+    {
+        return _pointsTotal; 
+    }
 }

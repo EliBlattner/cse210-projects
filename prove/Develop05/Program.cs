@@ -13,7 +13,6 @@ class Program
 
         while (_userMenuChoice != "7")
         {
-            Console.WriteLine($"You have __ points.\n");
             Thread.Sleep(1000);
 
             Console.WriteLine("\nMenu Options: \n    1. Create New Goal\n    2. List Goals\n    3. Save Goals\n    4. Load Goals\n    5. Record Event\n    6. Quit\n");

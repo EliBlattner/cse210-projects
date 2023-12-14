@@ -45,4 +45,9 @@ public class ChecklistGoal : Goal
         }
         Console.WriteLine($"Congratulations! You have earned {goalPointVal + pointsFromBonus} points! ");
     }
+
+    public int PassChecklistPoints()
+    {
+        return _pointsTotal;
+    }
 }
