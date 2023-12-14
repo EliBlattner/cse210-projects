@@ -13,12 +13,23 @@ class Program
 
         while (_userMenuChoice != "7")
         {
-            Thread.Sleep(1000);
+            if (_userMenuChoice == "99")
+            {
+                Console.WriteLine($"You have (0) points.\n");
+                Thread.Sleep(1000);
 
-            Console.WriteLine("\nMenu Options: \n    1. Create New Goal\n    2. List Goals\n    3. Save Goals\n    4. Load Goals\n    5. Record Event\n    6. Quit\n");
+                Console.WriteLine("\nMenu Options: \n    1. Create New Goal\n    2. List Goals\n    3. Save Goals\n    4. Load Goals\n    5. Record Event\n    6. Quit\n");
 
-            _userMenuChoice = Console.ReadLine();
+                _userMenuChoice = Console.ReadLine();
+            }
+            else
+            {
+                Thread.Sleep(1000);
 
+                Console.WriteLine("\nMenu Options: \n    1. Create New Goal\n    2. List Goals\n    3. Save Goals\n    4. Load Goals\n    5. Record Event\n    6. Quit\n");
+
+                _userMenuChoice = Console.ReadLine();
+            }
             if (_userMenuChoice == "1")
             {
                 Console.WriteLine("Which type of goal would you like to create?:\n    1. Simple Goal\n    2. Eternal Goal\n    3. Checklist Goal\n");
