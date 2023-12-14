@@ -2,6 +2,7 @@ public class SaveAndLoad
 {
     private string _fileName;
 
+    //I decided that using a constructor would complicate things with the way I've designed my program.
     public void SetFileName()
     {
         Console.WriteLine("What is full name of the txt file you'd like to access?\n");
@@ -15,7 +16,7 @@ public class SaveAndLoad
 
         if (userContinueChoice == "1")
         {    
-            using StreamWriter writer = new StreamWriter(_fileName);
+            using StreamWriter writer = new StreamWriter(_fileName, true);
             {
                 foreach (string entry in userGoalList)
                 {

@@ -11,7 +11,7 @@ class Program
         ChecklistGoal checklistGoal1 = new ChecklistGoal();
         SaveAndLoad saveAndLoad1 = new SaveAndLoad();
 
-        while (_userMenuChoice != "6")
+        while (_userMenuChoice != "7")
         {
             Console.WriteLine($"You have __ points.\n");
             Thread.Sleep(1000);
@@ -33,10 +33,12 @@ class Program
                 else if (_userGoalTypePick == "2")
                 {
                     //Do EternalGoal method action.
+                    eternalGoal1.CreateNewGoal();
                 }
                 else if (_userGoalTypePick == "3")
                 {
                     //Do ChecklistGoal method action.
+                    checklistGoal1.CreateNewGoal();
                 }
             }
             else if (_userMenuChoice == "2")
@@ -60,8 +62,41 @@ class Program
             {
                 //Record a goal event. Read a txt file containing goals. Update Goals string list to make changes. Re-display txt file.
                 goal1.ListGoals();
-                goal1.RecordEvent();
-            }       
+                Console.WriteLine("What goal did you accomplish?: ");
+                int goalSelectionIndex = int.Parse(Console.ReadLine());
+                string goalType = goal1.PassDisplayedGoalTypeList()[goalSelectionIndex - 1];
+                if (goalType == "SimpleGoal")
+                {
+                    simpleGoal1.RecordEvent();
+                }
+                else if (goalType == "EternalGoal")
+                {
+                    eternalGoal1.RecordEvent();
+                }
+                else if (goalType == "ChecklistGoal")
+                {
+                    checklistGoal1.RecordEvent();
+                }
+            }
+            else if (_userMenuChoice == "6")
+            {
+                Console.WriteLine("Warning! You will lose current session data if not saved to txt file.\nWould you like to save now? (y/n): ");
+                string userInput = Console.ReadLine();
+                if (userInput == "y")
+                {
+                    saveAndLoad1.SetFileName();
+                    saveAndLoad1.SaveCurrentEntries(goal1.PassUserGoalsList());
+                    Console.WriteLine("Session progress saved\nClosing program...");
+                    Thread.Sleep(1000);
+                    _userMenuChoice = "7";
+                }
+                else
+                {
+                    Console.WriteLine("Closing program...");
+                    Thread.Sleep(1000);
+                    _userMenuChoice = "7";
+                }
+            }
         }
     }
 }
