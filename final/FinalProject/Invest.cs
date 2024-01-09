@@ -54,7 +54,7 @@ public class Invest : Transfer
     {
         Console.WriteLine("--- Expand Portfolio ---");
         Thread.Sleep(1000);
-        Console.WriteLine("\nHere at Matrix Bank, we are inceredibly proud to have a team of highly experienced and skilled investment managers. You can rest assured\nknowing that your finances are in good hands. Some of the stable and reputable businesses found in our investment packages include: ");
+        Console.WriteLine("\nHere at Matrix Bank, we are incredibly proud to have a team of highly experienced and skilled investment managers. You can rest assured\nknowing that your finances are in good hands. Some of the stable and reputable businesses found in our investment packages include: ");
         Console.WriteLine("  [ BlockBuster Home Video ]  \n  [ Toys-R-Us ]  \n  [ Radio Shack ]  \n  [ Lehman Brothers Holdings ]");
         Thread.Sleep(1000);
         Console.WriteLine("\nWould you like to invest a portion of your assets into these companies? (y/n)");
